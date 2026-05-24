@@ -9,7 +9,7 @@ from tune import tune_model, build_final_tuned_model
 from results_io import append_results_to_csv
 
 
-DATASET_NAME = "breast_cancer"
+DATASET_NAME = "titanic"
 EXPERIMENT_TYPE = "tuned"
 SEED = 42
 TEST_SIZE = 0.2
@@ -20,7 +20,8 @@ MODELS_TO_TUNE = [
     "Logistic Regression",
     "Random Forest",
     "XGBoost",
-    "CatBoost"
+    "CatBoost",
+    "MLP Perceptron"
 ]
 
 
@@ -68,7 +69,7 @@ def main():
         )
 
         model_result["best_validation_score"] = best_validation_score
-        model_result["best_params"] = json.dumps(best_params)
+        model_result["best_params"] = json.dumps(best_params, default=str)
 
         tuned_results.append(model_result)
 
