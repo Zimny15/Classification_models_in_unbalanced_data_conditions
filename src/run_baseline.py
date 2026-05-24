@@ -1,4 +1,5 @@
 import pandas as pd
+import json
 
 from sklearn.model_selection import train_test_split
 
@@ -8,7 +9,7 @@ from evaluate import evaluate_model
 from results_io import append_results_to_csv
 
 
-DATASET_NAME = "breast_cancer"
+DATASET_NAME = "titanic"
 EXPERIMENT_TYPE = "baseline"
 SEED = 42
 TEST_SIZE = 0.2
@@ -49,6 +50,8 @@ def main():
             experiment_type=EXPERIMENT_TYPE,
             seed=SEED
         )
+
+        model_results["best_params"] = json.dumps(model.get_params(), default=str)
 
         baseline_results.append(model_results)
 
