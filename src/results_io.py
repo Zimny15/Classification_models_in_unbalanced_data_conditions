@@ -5,16 +5,35 @@ RESULT_COLUMNS = [
     "model",
     "experiment_type",
     "seed",
+
     "n_train_samples",
     "n_test_samples",
     "n_features",
+
     "accuracy",
     "precision",
     "recall",
     "f1_score",
     "roc_auc",
+
+    "training_time_sec",
+    "prediction_time_sec",
+    "total_modeling_time_sec",
+
     "best_validation_score",
-    "best_params"
+    "best_params",
+
+    "positive_class_ratio",
+    "train_size_after_balancing",
+
+    "noise_level",
+
+    "feature_selection_method",
+    "selected_features_count",
+    "selected_features",
+
+    "ensemble_models",
+    "ensemble_source_experiments"
 ]
 
 

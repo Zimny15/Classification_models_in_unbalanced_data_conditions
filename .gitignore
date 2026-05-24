@@ -1,5 +1,6 @@
 # Python.gitignore
 Notebooks/catboost_info/
+/catboost_info/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
